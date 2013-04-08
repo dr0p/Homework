@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(:version => 20130408212941) do
 
   create_table "questions", :force => true do |t|
-    t.string   "name",       :null => false
-    t.text     "content",    :null => false
+    t.string   "name"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
