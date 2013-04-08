@@ -1,6 +1,6 @@
 h1. Homework
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Have a homework? No problem ...
 
 h2. More Information
 
