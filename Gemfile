@@ -10,3 +10,9 @@ gem 'jquery-rails'
 gem "haml"
 gem "haml-rails", :group => :development
 gem "bootstrap-sass"
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'awesome_print'
+end
