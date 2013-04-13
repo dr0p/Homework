@@ -38,25 +38,27 @@ describe User do
     expect(user.name).to eq 'Pawel Drozanski'
   end
 
-  it "returns a sorted array of results that match" do
-    smith = User.create(first_name: 'John', last_name: 'Smith',
-      email: 'jsmith@examle.com')
-    jones = User.create(first_name: 'Tim', last_name: 'Jones',
-      email: 'tjones@example.com')
-    johnson = User.create(first_name: 'John', last_name: 'Johnson',
-      email: 'jjohnson@example.com')
+  describe "filter last name by letter" do
+    before :each do
 
-    expect(User.by_letter("J")).to eq [johnson, jones]
-  end
+      @smith = User.create(first_name: 'John', last_name: 'Smith',
+                           email: 'jsmith@examle.com')
+      @jones = User.create(first_name: 'Tim', last_name: 'Jones',
+                           email: 'tjones@example.com')
+      @johnson = User.create(first_name: 'John', last_name: 'Johnson',
+                             email: 'jjohnson@example.com')
+    end
 
-  it "returns a sorted array of results that don't match" do
-    smith = User.create(first_name: 'John', last_name: 'Smith',
-      email: 'jsmith@examle.com')
-    jones = User.create(first_name: 'Tim', last_name: 'Jones',
-      email: 'tjones@example.com')
-    johnson = User.create(first_name: 'John', last_name: 'Johnson',
-      email: 'jjohnson@example.com')
+    context "matching letters" do 
+      it "returns a sorted array of results that match" do
+        expect(User.by_letter("J")).to match_array [@johnson, @jones]
+      end
+    end
 
-    expect(User.by_letter("J")).not_to include smith
+    context "non-matching letters" do
+      it "returns a sorted array of results that don't match" do
+        expect(User.by_letter("J")).not_to include @smith
+      end
+    end
   end
 end
