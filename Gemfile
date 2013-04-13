@@ -14,7 +14,7 @@ gem "bootstrap-sass"
 group :test, :development do
   gem 'rspec-rails'
   gem 'guard-rspec'
-  gem 'guard-spork'
+  gem 'factory_girl_rails'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
@@ -27,5 +27,12 @@ group :development do
   gem 'librarian', '>= 0.0.25', require: false
   gem 'pry-rails'
   gem 'libnotify'
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
 end
 
