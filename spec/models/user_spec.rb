@@ -40,13 +40,9 @@ describe User do
 
   describe "filter last name by letter" do
     before :each do
-
-      @smith = User.create(first_name: 'John', last_name: 'Smith',
-                           email: 'jsmith@examle.com')
-      @jones = User.create(first_name: 'Tim', last_name: 'Jones',
-                           email: 'tjones@example.com')
-      @johnson = User.create(first_name: 'John', last_name: 'Johnson',
-                             email: 'jjohnson@example.com')
+      @smith = User.create(first_name: 'John', last_name: 'Smith', email: 'jsmith@examle.com')
+      @jones = User.create(first_name: 'Tim', last_name: 'Jones', email: 'tjones@example.com')
+      @johnson = User.create(first_name: 'John', last_name: 'Johnson', email: 'jjohnson@example.com')
     end
 
     context "matching letters" do 
@@ -60,5 +56,6 @@ describe User do
         expect(User.by_letter("J")).not_to include @smith
       end
     end
+
   end
 end
