@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails'
-gem 'sqlite3'
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
@@ -11,6 +10,10 @@ gem "haml"
 gem "haml-rails", :group => :development
 gem "bootstrap-sass"
 
+group :production do
+  gem 'pg'
+end
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'guard-rspec'
@@ -19,6 +22,7 @@ group :test, :development do
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
+  gem 'sqlite3'
 end
 
 group :development do
