@@ -14,6 +14,7 @@ gem "bootstrap-sass"
 group :test, :development do
   gem 'rspec-rails'
   gem 'guard-rspec'
+  gem 'guard-spork'
   gem 'factory_girl_rails'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
