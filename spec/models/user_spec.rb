@@ -2,40 +2,34 @@ require 'spec_helper'
 
 describe User do
 
-  it "is valid with a firstname and lastname" do
-    user = User.new(
-      first_name:  'Pawel',
-      last_name:   'Drozanski',
-      email:      'pawel@drozanski.pl')
-    expect(user).to be_valid
+  it "has a valid factory" do
+    expect(build(:user)).to be_valid
   end
 
   it "is invalid without a firstname" do
-    expect(User.new(first_name: nil)).to have(1).errors_on(:first_name)
+    user = build(:user, first_name: nil)
+    expect(user).to have(1).errors_on(:first_name)
   end
 
   it "is invalid without a lastname" do
-    expect(User.new(first_name: nil)).to have(1).errors_on(:first_name)
+    user = build(:user, last_name: nil)
+    expect(user).to have(1).errors_on(:last_name)
   end
 
   it "is invalid without an email" do
-    expect(User.new(email: nil)).to have(1).errors_on(:email)
+    user = build(:user, email: nil)
+    expect(user).to have(1).errors_on(:email)
   end
 
   it "is invalid with a duplicate email address" do
-    User.create(
-      first_name: 'Pawel1', last_name: 'Drozanski',
-      email: 'pawel@drozanski.pl')
-    user = User.new(
-      first_name: 'Pawel2', last_name: 'Drozanski',
-      email: 'pawel@drozanski.pl')
+    create(:user, email: "pawel@drozanski.com")
+    user = build(:user, email: "pawel@drozanski.com")
     expect(user).to have(1).errors_on(:email)
   end
 
   it "returns a contact's full name as a string" do
-    user = User.new(first_name: 'Pawel', last_name: 'Drozanski',
-      email: "pawel@drozanski.pl")
-    expect(user.name).to eq 'Pawel Drozanski'
+    user = build(:user, first_name: "John", last_name: "Doe")
+    expect(user.name).to eq 'John Doe'
   end
 
   describe "filter last name by letter" do
@@ -58,4 +52,6 @@ describe User do
     end
 
   end
+
+  it 'is not logged'
 end
