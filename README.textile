@@ -8,7 +8,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 h2. Required Gems
 
-This application requires this gem:
+This application uses only the latest versions of gems:
 
 * "rails":http://rubygems.org/gems/rails
 
