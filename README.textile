@@ -1,5 +1,7 @@
 h1. Homework
 "!https://codeclimate.com/github/dr0p/Homework.png!":https://codeclimate.com/github/dr0p/Homework
+!https://travis-ci.org/dr0p/Homework.png?branch=master!:https://travis-ci.org/dr0p/Homework
+!https://coveralls.io/repos/dr0p/Homework/badge.png?branch=master(Coverage Status)!:https://coveralls.io/r/dr0p/Homework
 
 Have a homework? No problem ...
 
