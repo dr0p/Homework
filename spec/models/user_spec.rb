@@ -55,5 +55,4 @@ describe User do
 
   end
 
-  it 'is not logged'
 end

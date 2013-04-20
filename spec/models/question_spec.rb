@@ -30,7 +30,5 @@ describe Question do
     expect(FactoryGirl.build(:question, name: "?")).to have(1).errors_on(:name)
   end
 
-  it "is created too often"
-
 end
 
