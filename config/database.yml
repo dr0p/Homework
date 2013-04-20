@@ -6,14 +6,14 @@ postgresql: &postgresql
   adapter: postgresql
   username: postgres
   password:
-  database: myapp_<%= Rails.env %>
+  database: homework_<%= Rails.env %>
   min_messages: ERROR
 
 defaults: &defaults
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "postgresql" %>
+  <<: *<%= ENV['DB'] || "sqlite" %>
 
 development:
   <<: *defaults
