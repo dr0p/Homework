@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
+
 gem 'rails'
+
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
@@ -9,6 +11,7 @@ gem 'jquery-rails'
 gem "haml"
 gem "haml-rails", :group => :development
 gem "bootstrap-sass"
+gem 'coveralls', require: false
 
 group :production do
   gem 'pg'

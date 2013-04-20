@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'coveralls'
+Coveralls.wear!
 
 describe Answer do
   it 'has valid factory' do
